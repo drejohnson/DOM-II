@@ -8,6 +8,7 @@ const imgContent = document.querySelectorAll('.img-content img')
 const destImg = document.querySelector('.content-destination img')
 const inverseSection = document.querySelector('.inverse-content')
 const textContent = document.querySelector('.inverse-content .text-content')
+const destination = document.querySelectorAll('.destination')
 
 window.addEventListener("load", () => {
   console.log("The page has been loaded");
@@ -93,3 +94,23 @@ window.addEventListener('keydown', e => {
     ? alert(`You pressed the space bar`)
     : alert(`You pressed the ${e.key} key`);
 })
+
+// Stretch task
+
+destination.forEach(dest => {
+  dest.addEventListener('mouseenter', (e) => {
+    TweenMax.to(dest, 1, {
+      scale: 1.3,
+      rotation: 360,
+      ease: Power2.easeOut
+    })
+  })
+  dest.addEventListener('mouseleave', (e) => {
+    TweenMax.to(dest, 1, {
+      scale: 1,
+      rotation: 0,
+      ease: Power2.easeOut
+    })
+  })
+}
+)
